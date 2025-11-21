@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luz em Flor - Flores de Crochê Artesanais</title>
+<!-- Fontes Google -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3ead8; /* bege suave */
+    background-image: url('https://www.transparenttextures.com/patterns/linen.png'); /* textura linho leve */
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Container Limite */
+  .container {
+    max-width: 1080px;
+    margin: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Header / Banner */
+  header {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+  }
+
+  /* Slogan */
+  header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.7);
+  }
+
+  /* Botão WhatsApp no banner */
+  .btn-whatsapp {
+    background-color: #223b7a;
+    color: white;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(34,59,122,0.4);
+    transition: background-color 0.3s ease;
+  }
+  .btn-whatsapp:hover {
+    background-color: #3cc0ff;
+    color: #223b7a;
+  }
+
+  /* Seções */
+  section {
+    background-color: white;
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  }
+
+  section h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #223b7a;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* Sobre */
+  .sobre p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+  }
+
+  /* Tabela de preços */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.9rem 0.7rem;
+    border-bottom: 1px solid #e8e1d5;
+    font-size: 1rem;
+  }
+  th {
+    background-color: #f9f5ef;
+    color: #223b7a;
+  }
+
+  /* Botão Encomendar (após tabela) */
+  .btn-whatsapp-full {
+    display: block;
+    background-color: #223b7a;
+    color: white;
+    padding: 12px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    margin: 1rem auto 0 auto;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(34,59,122,0.4);
+    transition: background-color 0.3s ease;
+  }
+  .btn-whatsapp-full:hover {
+    background-color: #3cc0ff;
+    color: #223b7a;
+  }
+
+  /* Formulário Encomendas */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  label {
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    color: #223b7a;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.8px solid #223b7a;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fdfcf8;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #3cc0ff;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  button[type="submit"] {
+    margin-top: 1.5rem;
+    background-color: #223b7a;
+    color: white;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    padding: 14px 0;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(34,59,122,0.4);
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #3cc0ff;
+    color: #223b7a;
+  }
+
+  /* Entregas e pagamentos texto */
+  .entregas p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #444;
+  }
+
+  /* Rodapé */
+  footer {
+    background-color: #223b7a;
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  footer h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+  }
+  footer p a {
+    color: #3cc0ff;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+    transition: text-decoration 0.3s ease;
+  }
+  footer p a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    header {
+      height: 300px;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      padding: 0 0.5rem;
+    }
+    .btn-whatsapp,
+    .btn-whatsapp-full {
+      width: 90%;
+      max-width: 280px;
+      padding: 12px 15px;
+    }
+    .container {
+      padding: 0 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Feito à mão, com luz no coração</h1>
+  <a href="https://wa.me/244926930944?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20encomenda" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="Fazer encomenda no WhatsApp">
+    Fazer Encomenda no WhatsApp
+  </a>
+</header>
+
+<div class="container">
+
+  <section class="sobre" aria-labelledby="sobre-titulo">
+    <h2 id="sobre-titulo">Sobre a Luz em Flor</h2>
+    <p>A Luz em Flor nasceu do meu amor pelo crochê e do desejo de transformar carinho em arte. O que começou como um hobby virou uma forma de levar beleza e significado para momentos especiais.</p>
+    <p>Cada flor é feita à mão, ponto por ponto. Escolho os fios, teço as pétalas, monto o caule e dou acabamento com cuidado. Nada é produzido em massa — cada peça é única e feita com paciência.</p>
+    <p><strong>Valores da marca:</strong></p>
+    <ul>
+      <li>Delicadeza: cada detalhe importa</li>
+      <li>Amor: cada buquê carrega intenção</li>
+      <li>Propósito: criar algo que dure e toque pessoas</li>
+    </ul>
+    <p><em>Tom suave e cristão:</em><br />
+       A marca tem a minha fé como base. Trabalho com gratidão e amor, lembrando sempre:<br />
+       <q>“E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor, e não aos homens” <br />
+       Colossenses 3:23</q>
+    </p>
+  </section>
+
+  <section class="precos" aria-labelledby="precos-titulo">
+    <h2 id="precos-titulo">Tabela de Preços por Unidade</h2>
+    <table>
+      <thead>
+        <tr><th>Flor</th><th>Preço (KZS)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Miosótis</td><td>1.000</td></tr>
+        <tr><td>Lírio do Vale</td><td>1.500</td></tr>
+        <tr><td>Mini Rosas</td><td>2.000</td></tr>
+        <tr><td>Margaridas</td><td>2.500</td></tr>
+        <tr><td>Tulipas</td><td>4.000</td></tr>
+        <tr><td>Lavandas</td><td>4.500</td></tr>
+        <tr><td>Dente de Leão</td><td>4.500</td></tr>
+        <tr><td>Flor Cosmos</td><td>4.500</td></tr>
+        <tr><td>Lírio</td><td>5.500</td></tr>
+        <tr><td>Camélias</td><td>6.500</td></tr>
+        <tr><td>Rosas</td><td>7.500</td></tr>
+        <tr><td>Orquídea</td><td>8.000</td></tr>
+        <tr><td>Girassóis</td><td>8.500</td></tr>
+        <tr><td>Rosa Tailandesa</td><td>10.000</td></tr>
+      </tbody>
+    </table>
+    <a href="https://wa.me/244926930944?text=Ol%C3%A1%2C%20gostaria%20de%20encomendar" target="_blank" rel="noopener" class="btn-whatsapp-full" aria-label="Encomendar pelo WhatsApp">
+      Encomendar pelo WhatsApp
+    </a>
+  </section>
+
+  <section id="encomendas" aria-labelledby="encomendas-titulo">
+    <h2 id="encomendas-titulo">Encomendas</h2>
+    <form id="formEncomendas" novalidate>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required aria-required="true" autocomplete="name" placeholder="Seu nome completo" />
+
+      <label for="telefone">Número de telefone</label>
+      <input type="tel" id="telefone" name="telefone" required aria-required="true" autocomplete="tel" placeholder="+244 9XX XXX XXX" pattern="^[\d\s\+]+$"/>
+
+      <label for="produto">Produto</label>
+      <select id="produto" name="produto" required aria-required="true">
+        <option value="" disabled selected>Selecione o produto</option>
+        <option>Miosótis</option><option>Lírio do Vale</option><option>Mini Rosas</option>
+        <option>Margaridas</option><option>Tulipas</option><option>Lavandas</option>
+        <option>Dente de Leão</option><option>Flor Cosmos</option><option>Lírio</option>
+        <option>Camélias</option><option>Rosas</option><option>Orquídea</option>
+        <option>Girassóis</option><option>Rosa Tailandesa</option>
+      </select>
+
+      <label for="cor">Cor</label>
+      <input type="text" id="cor" name="cor" required aria-required="true" placeholder="Cor desejada" />
+
+      <label for="quantidade">Quantidade</label>
+      <input type="number" id="quantidade" name="quantidade" min="1" required aria-required="true" placeholder="Quantidade" />
+
+      <label for="dados">Dados desejados (data que deseja adquirir)</label>
+      <input type="text" id="dados" name="dados" required aria-required="true" placeholder="Ex: 01/12/2024" />
+
+      <label for="observacoes">Observações (Se for mistura de flores, especifique tipos, cores e quantidades)</label>
+      <textarea id="observacoes" name="observacoes" placeholder="Ex: 2 Rosas vermelhas, 3 Margaridas amarelas"></textarea>
+
+      <button type="submit" aria-label="Enviar pedido">Enviar</button>
+    </form>
+  </section>
+
+  <section class="entregas" aria-labelledby="entregas-titulo">
+    <h2 id="entregas-titulo">Entregas e Pagamentos</h2>
+    <p>As entregas são combinadas diretamente pelo WhatsApp. Os tempos de produção podem variar. Formas de pagamento aceitas: Transferências e cash. Sem valores fixos de entrega.</p>
+  </section>
+
+</div>
+
+<footer>
+  <h3>Contato</h3>
+  <p>
+    <a href="https://wa.me/244926930944" target="_blank" rel="noopener" aria-label="WhatsApp Luz em Flor">WhatsApp (+244 926930944)</a> |
+    <a href="https://www.instagram.com/luz_em_flor3?igsh=Z2NhaHF6NWJrcDNv&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram Luz em Flor">Instagram</a> |
+    <a href="https://www.tiktok.com/@luz_em_flor?_r=1&_t=ZM-91aI4ZlqlDw" target="_blank" rel="noopener" aria-label="TikTok Luz em Flor">TikTok</a>
+  </p>
+</footer>
+
+<script>
+  // Interação para o formulário: abrir WhatsApp com dados formatados
+  const form = document.getElementById('formEncomendas');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validação simples (pode ser melhorada se necessário)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    
+    const nome = form.nome.value.trim();
+    const telefone = form.telefone.value.trim();
+    const produto = form.produto.value;
+    const cor = form.cor.value.trim();
+    const quantidade = form.quantidade.value;
+    const dados = form.dados.value.trim();
+    const observacoes = form.observacoes.value.trim() || 'Nenhuma';
+
+    const mensagem = 
+`Nome: ${nome}
+Número de telefone: ${telefone}
+Produto: ${produto}
+Cor: ${cor}
+Quantidade: ${quantidade}
+Dados desejados: ${dados}
+Observações: ${observacoes}`;
+
+    const urlWhatsapp = `https://wa.me/244926930944?text=${encodeURIComponent(mensagem)}`;
+    window.open(urlWhatsapp, '_blank');
+  });
+</script>
+
+</body>
+</html>
